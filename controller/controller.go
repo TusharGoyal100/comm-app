@@ -12,7 +12,6 @@ import (
 	"time"
 
 	"github.com/gorilla/mux"
-	"github.com/mowshon/moviego"
 )
 
 func SentMesaage(w http.ResponseWriter, r *http.Request) {
@@ -185,22 +184,22 @@ func ServeAllMsgFile(w http.ResponseWriter, r *http.Request) {
 
 }
 
-func ServeVideoFile(w http.ResponseWriter, r *http.Request) {
-	fmt.Println("Inside ServeAllMsgFile")
-	w.Header().Set("Content-Type", "video/mp4")
+// func ServeVideoFile(w http.ResponseWriter, r *http.Request) {
+// 	fmt.Println("Inside ServeAllMsgFile")
+// 	w.Header().Set("Content-Type", "video/mp4")
 
-	first, err := moviego.Load("/Users/tushargoyal/Downloads/WhatsApp Video 2022-11-27 at 14.19.52.mp4")
-	if err != nil {
-		fmt.Println(err)
-		return
-	}
+// 	first, err := moviego.Load("/Users/tushargoyal/Downloads/WhatsApp Video 2022-11-27 at 14.19.52.mp4")
+// 	if err != nil {
+// 		fmt.Println(err)
+// 		return
+// 	}
 
-	// A simple screenshot from the video.
-	_, err = first.Screenshot(2, "./simple-screen.png")
-	if err != nil {
-		fmt.Println(err)
-		return
-	}
+// 	// A simple screenshot from the video.
+// 	_, err = first.Screenshot(2, "./simple-screen.png")
+// 	if err != nil {
+// 		fmt.Println(err)
+// 		return
+// 	}
 
-	http.ServeFile(w, r, "/Users/tushargoyal/Downloads/WhatsApp Video 2022-11-27 at 14.19.52.mp4")
-}
+// 	http.ServeFile(w, r, "/Users/tushargoyal/Downloads/WhatsApp Video 2022-11-27 at 14.19.52.mp4")
+// }
