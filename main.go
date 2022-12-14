@@ -27,7 +27,7 @@ func main() {
 	fmt.Println("Starting communication app....")
 	r := router.Router()
 
-	err := http.ListenAndServe(os.Getenv("port"), r)
+	err := http.ListenAndServe(os.Getenv("PORT"), r)
 	if err != nil {
 		log.Fatal("error while starting the app")
 	}
